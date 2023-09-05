@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  :root {
+    /* Fix color */
+    --main: #4338ca;
+    --main2: #f8fafc;
+    --netral: #64748b;
+    --light: #f8fafc;
+    --dark: #020617;
+    --red: #b91c1c;
+
+    /* Light color */
+    --bg-light: #f8fafc;
+    --bg2-light: rgba(2, 6, 23, 0.3);
+    --text-light: #020617;
+    --text2-light: #475569;
+    --component-light: #f1f5f9;
+    --component2-light: rgba(203, 213, 225, 0.6);
+    --border-light: #cbd5e1;
+
+    /* Dark color */
+    --bg-dark: #020617;
+    --bg2-dark: rgba(248, 250, 252, 0.3);
+    --text-dark: #f8fafc;
+    --text2-dark: #94a3b8;
+    --component-dark: #0f172a;
+    --component2-dark: rgba(51, 65, 85, 0.6);
+    --border-dark: #334155;
+  }
+
+  :root[color-scheme='light'] {
+    --bg: var(--bg-light);
+    --bg2: var(--bg2-light);
+    --text: var(--text-light);
+    --text2: var(--text2-light);
+    --component: var(--component-light);
+    --component2: var(--component2-light);
+    --border: var(--border-light);
+  }
+
+  :root[color-scheme='dark'] {
+    --bg: var(--bg-dark);
+    --bg2: var(--bg2-dark);
+    --text: var(--text-dark);
+    --text2: var(--text2-dark);
+    --component: var(--component-dark);
+    --component2: var(--component2-dark);
+    --border: var(--border-dark);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: var(--bg-light);
+      --bg2: var(--bg2-light);
+      --text: var(--text-light);
+      --text2: var(--text2-light);
+      --component: var(--component-light);
+      --component2: var(--component2-light);
+      --border: var(--border-light);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: var(--bg-dark);
+      --bg2: var(--bg2-dark);
+      --text: var(--text-dark);
+      --text2: var(--text2-dark);
+      --component: var(--component-dark);
+      --component2: var(--component2-dark);
+      --border: var(--border-dark);
+    }
+  }
+
+  .gradient {
+    background: linear-gradient(225deg, var(--light) 50%, var(--dark) 50%);
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #0d9488;
+    border-radius: 9999px;
+  }
+
+  .animation-navbar {
+    animation: animation-navbar 0.3s ease-in-out;
+  }
+
+  @keyframes animation-navbar {
+    from {transform: translateX(-100%);}
+    to {transform: translateX(0%);}
+  }
+
+  .animation-modal {
+    animation: animation-modal 0.3s ease-out;
+  }
+
+  @keyframes animation-modal {
+    from {transform: scale(.95); opacity: 0}
+    to {transform: scale(1); ; opacity: 1}
+  }
+}
